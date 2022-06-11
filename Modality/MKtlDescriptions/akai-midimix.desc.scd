@@ -30,9 +30,9 @@ k.elementAt(sl, 1).action = { 1.postcs; };
 'Reference/Naming_conventions_in_element_descriptions'.openHelpFile
 
 4. When many elements of the same type are listed in an obvious order,
-   such as 8 sliders sending cc numbers,
-   or 88 piano keys sending noteOn and noteOff,
-   it makes sense to organize them into Arrays.
+such as 8 sliders sending cc numbers,
+or 88 piano keys sending noteOn and noteOff,
+it makes sense to organize them into Arrays.
 'Reference/MKtl_description_files'.openHelpFile
 
 Instructions will be continued when canonical format is been finalized.
@@ -132,6 +132,18 @@ elementsDesc: (
 							))
 						)
 					}
+				),
+				( elements: [2,5,8,11,14,17,20,23]
+					.collect{ |midiNote,i|
+						MKtlDesc.notePair(
+							(i+1).asSymbol, midiNote,
+							(style: (
+								row: 5,
+								column: i,
+								showLabel: true
+							))
+						)
+					}
 				)
 			]
 		),
@@ -159,4 +171,3 @@ elementsDesc: (
 )
 
 );
-
